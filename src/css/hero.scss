@@ -1,0 +1,132 @@
+#hero {
+  width: 150vh;
+  position: relative;
+
+  @media (orientation: portrait) {
+    width: 100%;
+  }
+
+  .content {
+    position: relative;
+    top: -3.25vh;
+    left: 35vh;
+    width: 110vh;
+    height: 100vh;
+
+    @media (orientation: portrait) {
+      left: 0;
+      width: 100%;
+      height: auto;
+      padding-right: 5vw;
+      padding-left: 5vw;
+    }
+
+    h1 {
+      font-size: 22vh;
+      font-weight: 900;
+      position: absolute;
+
+      @media (orientation: portrait) {
+        display: none;
+      }
+
+      & span {
+        position: absolute;
+
+        &:nth-child(1) {
+          top: -10vh;
+          left: 0;
+        }
+
+        &:nth-child(2) {
+          top: 20vh;
+          left: 40vh;
+
+          &::before {
+            content: "";
+            display: block;
+            height: .2vh;
+            width: 22vh;
+            background-color: black;
+            transform: rotate(45deg) translate(-50%, 15vh);
+            opacity: .2;
+          }
+        }
+
+        &:nth-child(3) {
+          top: 50vh;
+          left: 80vh;
+
+          &::before {
+            content: "";
+            display: block;
+            height: .2vh;
+            width: 22vh;
+            background-color: black;
+            transform: rotate(45deg) translate(-50%, 20vh);
+            opacity: .2;
+          }
+        }
+      }
+    }
+
+    h2 {
+      font-size: 3vh;
+      font-weight: 400;
+      line-height: 1.1;
+      position: absolute;
+      height: 35vh;
+      margin: 0;
+
+      @media (orientation: portrait) {
+        font-size: 9vw;
+        position: static;
+        height: auto;
+      }
+
+      &.en {
+        top: 12vh;
+        right: 8vh;
+        writing-mode: vertical-rl;
+
+        @media (orientation: portrait) {
+          margin-top: 20vw;
+          writing-mode: horizontal-tb;
+        }
+      }
+
+      &.zh {
+        font-weight: 600;
+        bottom: 5vh;
+        left: 0;
+        writing-mode: vertical-rl;
+        line-height: 1.4;
+
+        @media (orientation: portrait) {
+          margin-top: 5vw;
+          margin-bottom: 5vw;
+          font-size: 7vw;
+          writing-mode: horizontal-tb;
+        }
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2vh;
+    right: 0;
+    display: block;
+    width: .1vh;
+    height: 96vh;
+    background-color: black;
+
+    @media (orientation: portrait) {
+      height: .1vw;
+      width: 100vw;
+      top: auto;
+      bottom: 0;
+    }
+  }
+}
