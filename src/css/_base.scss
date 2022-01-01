@@ -2,24 +2,28 @@
   font-family: Butler;
   font-weight: 400;
   src: url("../fonts/Butler.woff");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Source Han Serif";
   font-weight: 600;
   src: url("../fonts/SourceHanSerifCN-SemiBold-subset.woff");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Source Han Serif";
   font-weight: 700;
   src: url("../fonts/SourceHanSerifCN-Bold-subset.woff");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Source Han Serif";
   font-weight: 900;
   src: url("../fonts/SourceHanSerifCN-Heavy-subset.woff");
+  font-display: swap;
 }
 
 *, *::before, *::after {
@@ -37,6 +41,9 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
