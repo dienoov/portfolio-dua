@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
 const path = require('path');
 
 module.exports = {
@@ -53,5 +55,13 @@ module.exports = {
       filename: 'index.html',
     }),
     new CleanWebpackPlugin(),
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 32,
+          progressive: true,
+        }),
+      ],
+    }),
   ],
 };
